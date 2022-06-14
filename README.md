@@ -1,2 +1,7 @@
-# beamerTemplate
-Beamer template and example used in the courses
+# th-koeln-beamer-template
+
+get from github
+
+# Chinese template 
+
+is developing

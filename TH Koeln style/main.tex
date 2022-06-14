@@ -1,0 +1,201 @@
+\documentclass[9pt, xcolor=table]{beamer}
+%
+% Packages
+\usepackage[english]{babel} % Set language
+\usepackage[T1]{fontenc}  % font Encoder for westeuropean languages
+\usepackage[utf8]{inputenc} % Utf8 input encoder
+\usepackage[autostyle=true,german=quotes]{csquotes} % quotation package
+\usepackage[ddmmyyyy]{datetime} % for date and time formats
+\usepackage[sorting=none,backend=biber]{biblatex}  % bibliography package
+\usepackage{pgfpages} % print multiple pages per slide
+\usepackage[font={footnotesize}]{caption} %caption package
+\usepackage{xcolor} % color package
+%\usepackage{ziffer} % set , as decimal and . as thousand seperator (needed for german)
+%
+%
+% activate to show notes on second screen:
+%\setbeameroption{show notes on second screen}
+%
+%
+% Bibliography
+\addbibresource{references.bib} 
+%
+% Image Path
+\graphicspath{{Images/}}    
+%
+% Style
+\input{Style.tex}
+%
+% Title page information
+\title[Presentation Short Title] {Long title of the presentation explaining the topic, motivation and so on}
+\author[Surname, Name]{Name Surname}
+\institute[TH Köln] {Institute, Supervisors, Developer Team or something else}
+\newcommand{\Subject}{Subject or field of study}
+\newcommand{\PlaceAndTime}{Presentation Cologne, \insertdate}
+\newcommand{\Contactmail}{\url{name.surname@smail.th-koeln.de}}
+\date{\today}
+%
+% define title graphic
+\titlegraphic {\includegraphics[width=\linewidth, trim={0 7cm 0 7cm}, clip]{board-410099_1920.jpg}}
+% title graphic logo
+\newcommand{\insertLogos}
+{\centering \includegraphics[height=1.15cm]{TH_Logo.pdf}\hspace{1em}\includegraphics[height=1.15cm]{Institute.jpg}}
+%
+\input{titlepage}
+%
+% start of document
+%------------------------------------------------------------------------------
+\begin{document}
+%
+% Title page
+\begin{frame}[plain]
+	\titlepage
+\end{frame}
+%
+\begin{frame}{Agenda}
+	\tableofcontents
+\end{frame}
+%
+%
+\section{Introduction}
+\begin{frame}{Intro}
+	%
+	\vfill
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	\vfill
+	%
+    \begin{displayquote}
+    Sé que tengo un ego del tamaño de un planeta pequeño, pero incluso yo a 
+    veces me equivoco
+    \end{displayquote}
+	\vfill
+	%
+	Vel feugiat iudicabit assentior in. Sed utroque suscipiantur eu. Ad nihil dolorum accumsan est. Utroque intellegam eam ea, te pro eleifend mnesarchum.
+	\vfill
+	%
+\end{frame}
+%
+\section{Topic}
+%
+\begin{frame}{Topic Slide 1}
+	%
+	\begin{columns}[totalwidth=\linewidth]
+		\begin{column}{0.5\columnwidth}
+			%
+			Here's some text with a citation \cite{Book4}. Heres another one \cite{Book5}. Take a look at figure \ref{fig:Example} and table \ref{tab:Example}.
+			\vspace{2ex}
+			%
+			\begin{table}[c]
+				\centering
+				\begin{tabular}{c|c|c}
+					Object & Length & Height \\ \hline
+					A      & 2.52   & 3.53   \\ \hline
+					B      & 1.90   & 5.30   \\ \hline
+				\end{tabular}
+				\caption{Exemplary table.}
+				\label{tab:Example}
+			\end{table}
+			%
+		\end{column}
+		\begin{column}{0.5\columnwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=0.5\paperheight]{pexels-pixabay-45239.jpg}
+				\caption{Exemplary image. Source: \cite{PixMicroscope}}
+				\label{fig:Example}
+			\end{figure}    
+		\end{column}
+	\end{columns}
+	%
+\end{frame}
+%
+\begin{frame}{Topic Slide 2}
+	%
+	\begin{block}{Observation}
+		This is an Observation Block.
+	\end{block}
+	%
+	\begin{exampleblock}{Example}
+		This is an Example Block.
+	\end{exampleblock}
+	%
+	\begin{alertblock}{Alert}
+		This is an Alert Block.
+	\end{alertblock}
+	%
+	\vfill
+	This leads to the following equation:
+	\begin{equation}
+		M = \frac{2\pi}{x^5 - y^3 + \sin(x)} \cdot \int_{a}^{b} f(x)^2 \,dx
+	\end{equation}
+\end{frame}
+%
+%
+\section{Outlook}
+\begin{frame}{Outlook}
+	%
+	\textbf{List}\\
+	\begin{itemize}
+		\item Pri sonet labore expetenda
+		      \begin{itemize}
+		      	\item Svix te wisi atqui inermis
+		      	\item  Cum dolor delenit argumentum et
+		      \end{itemize}
+		\item no vim quidam probatus senserit
+		\item accommodare necessitatibus ad quo
+		\item integre persecuti efficiantur at pro
+	\end{itemize}
+	%
+	\vfill
+	%
+	\textbf{List 2}\\
+	\begin{enumerate}
+		\item no vis patrioque reprehendunt
+		\item partem definitiones nam
+		\item vel wisi dignissim voluptatibus ut
+	\end{enumerate}
+	%
+\end{frame}
+%
+%------------------------------------------------------------------------------
+%
+\section{Sources}
+%
+\begin{frame}{Sources (1)}
+	\textbf{Image Sources}\\[2ex]
+	\small Title page:
+	\fullcite{PixBoard}
+	\vspace{2ex}
+	
+	\printbibliography[keyword=pic]
+\end{frame}
+%
+\begin{frame}
+	\frametitle{Sources (2)}
+	\textbf{Sources}\\
+	\printbibliography[keyword=inf]
+	\vfill
+	%
+	\textbf{Additional Literature}
+	\small
+	\begin{itemize}
+		\item \fullcite{Book1}
+		\item \fullcite{Book2}
+		\item \fullcite{Book3}
+	\end{itemize}
+\end{frame}
+%
+\begin{frame}{}
+	\usebeamerfont{AAA}
+	\begin{center}
+		\Large Thank you for your attention\\[2ex] 
+		\small Please feel free to ask any questions
+		\vspace{10ex}
+		
+		Contact:\\
+		\Contactmail
+	\end{center}
+\end{frame}
+%
+%------------------------------------------------------------------------------
+\end{document}
